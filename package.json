@@ -1,4 +1,6 @@
-{ "homepage": "https://Eracres.github.io/REACT-ejericicios",
+
+{
+  "name": "REACT-ejericicios",
   "version": "1.0.0",
   "private": true,
   "dependencies": {
@@ -13,16 +15,5 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  }
+  "homepage": "https://eracres.github.io/REACT-ejericicios"
 }
