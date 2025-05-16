@@ -66,7 +66,8 @@ export default function App() {
 
         {isCorrect !== null && (
           <div
-            className={\`mt-4 p-4 rounded text-white \${isCorrect ? "bg-green-500" : "bg-red-500"}\`}
+          className={"mt-4 p-4 rounded text-white " + (isCorrect ? "bg-green-500" : "bg-red-500")}
+
           >
             {isCorrect
               ? "✅ ¡Correcto! El componente es válido."

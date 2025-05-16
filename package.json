@@ -1,13 +1,13 @@
-
 {
-  "name": "REACT-ejercicios",
+  "homepage": "https://Eracres.github.io/REACT-ejercicios",
   "version": "1.0.0",
   "private": true,
   "dependencies": {
+    "gh-pages": "^6.3.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-live": "^4.0.0",
-    "react-scripts": "5.0.1"
+    "react-scripts": "^5.0.1"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -15,5 +15,16 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
-  "homepage": "https://tuusuario.github.io/REACT-ejercicios"
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
 }
