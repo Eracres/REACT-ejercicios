@@ -1,47 +1,54 @@
-
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   LiveProvider,
   LiveEditor,
   LiveError,
   LivePreview
 } from "react-live";
+import ejercicios from "./ejercicios"; // Tu archivo de ejercicios/ejemplos
 
 const scope = {};
 
-const defaultCode = `
-function HolaMundo() {
-  return <h1>Hola desde React</h1>;
-}
-
-<HolaMundo />
-`;
-
 export default function App() {
-  const [code, setCode] = useState(defaultCode);
+  const [data, setData] = useState(null);
+  const [code, setCode] = useState("");
   const [isCorrect, setIsCorrect] = useState(null);
 
+  // 🔍 Leer los parámetros de la URL
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const modulo = params.get("modulo");
+    const tipo = params.get("tipo");
+    const id = params.get("id");
+
+    const key = `${modulo}-${tipo}-${id}`;
+    const ejercicio = ejercicios[key];
+
+    if (ejercicio) {
+      setData(ejercicio);
+      setCode(ejercicio.codigo);
+    }
+  }, []);
+
+  // ✅ Validación automática
   const validateCode = () => {
     try {
-      const functionExists = /function\s+HolaMundo\s*\(/.test(code);
-      const returnsHola = /<h1>.*Hola.*<\/h1>/.test(code);
-      if (functionExists && returnsHola) {
-        setIsCorrect(true);
-      } else {
-        setIsCorrect(false);
-      }
+      const resultado = data.validar(code);
+      setIsCorrect(resultado);
     } catch (e) {
       setIsCorrect(false);
     }
   };
 
+  if (!data) {
+    return <div className="p-6">Cargando ejercicio...</div>;
+  }
+
   return (
     <div className="p-6 max-w-4xl mx-auto">
-      <h1 className="text-2xl font-bold mb-4">Ejercicio 1: Hola Mundo</h1>
-      <p className="mb-4">
-        Escribe un componente llamado <code>HolaMundo</code> que devuelva un
-        encabezado &lt;h1&gt; con el texto "Hola desde React".
-      </p>
+      <h1 className="text-2xl font-bold mb-4">{data.titulo}</h1>
+
+      <p className="mb-4 whitespace-pre-line">{data.descripcion}</p>
 
       <LiveProvider code={code} scope={scope} noInline>
         <div className="mb-4">
@@ -66,8 +73,10 @@ export default function App() {
 
         {isCorrect !== null && (
           <div
-          className={"mt-4 p-4 rounded text-white " + (isCorrect ? "bg-green-500" : "bg-red-500")}
-
+            className={
+              "mt-4 p-4 rounded text-white " +
+              (isCorrect ? "bg-green-500" : "bg-red-500")
+            }
           >
             {isCorrect
               ? "✅ ¡Correcto! El componente es válido."
