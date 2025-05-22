@@ -14,7 +14,7 @@ export default function Modulo() {
       });
   }, [moduloId]);
 
-  if (!modulo) return <p>Cargando...</p>;
+  if (!modulo) return <p>Cargando módulo...</p>;
 
   return (
     <div>

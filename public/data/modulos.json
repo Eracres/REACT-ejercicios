@@ -3,14 +3,8 @@
     {
       "id": "modulo1",
       "nombre": "Módulo 1 - Introducción",
-      "ejemplos": ["ejemplo1", "ejemplo2"],
+      "ejemplos": ["ejemplo1"],
       "ejercicios": ["ejercicio1"]
-    },
-    {
-      "id": "modulo2",
-      "nombre": "Módulo 2 - Componentes",
-      "ejemplos": ["ejemplo1", "ejemplo2", "ejemplo3"],
-      "ejercicios": ["ejercicio1", "ejercicio2"]
     }
   ]
 }

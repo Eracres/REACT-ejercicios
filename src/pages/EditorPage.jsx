@@ -1,11 +1,10 @@
-// EditorPage.jsx
 import { useParams } from "react-router-dom";
 import { Sandpack } from "@codesandbox/sandpack-react";
 import { useEffect, useState } from "react";
 
 export default function EditorPage() {
   const { moduloId, tipo, archivo } = useParams();
-  const [codigo, setCodigo] = useState("// Cargando código...");
+  const [codigo, setCodigo] = useState("// Cargando...");
 
   useEffect(() => {
     fetch(`/data/${moduloId}/${archivo}.js`)
