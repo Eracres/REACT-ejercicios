@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Ejercicio 1 - PerfilUsuario</title>
+    <script src="https://unpkg.com/@codesandbox/sandpack-react/umd/index.min.js"></script>
+  </head>
+  <body>
+    <h2>📋 Ejercicio 1: Perfil de usuario</h2>
+    <p><strong>🎯 Objetivo:</strong> Aprender a construir un componente funcional simple y mostrar contenido estático.</p>
+
+    <p>📝 Instrucciones:</p>
+    <ul>
+      <li>Crea un componente llamado <code>PerfilUsuario</code>.</li>
+      <li>Dentro de él, muestra lo siguiente:</li>
+      <ul>
+        <li>Un título <code>&lt;h2&gt;</code> con el texto: “Perfil del usuario”.</li>
+        <li>Un párrafo <code>&lt;p&gt;</code> con el nombre de un usuario ficticio (ej. Juan Pérez).</li>
+      </ul>
+      <li>Importa y usa el componente dentro de <code>App.js</code> con la etiqueta: <code>&lt;PerfilUsuario /&gt;</code></li>
+    </ul>
+
+    <div id="editor"></div>
+
+    <script type="module">
+      import { Sandpack } from "https://unpkg.com/@codesandbox/sandpack-react/dist/index.mjs";
+      const root = document.getElementById("editor");
+      Sandpack.render(root, {
+        template: "react",
+        files: {
+          "/App.js": {
+            code: `// Escribe aquí tu solución
+
+export default function App() {
+  return (
+    <div>
+      {/* Aquí debería ir tu componente */}
+    </div>
+  );
+}`
+          }
+        },
+        options: {
+          showTabs: true,
+          showLineNumbers: true,
+          editorHeight: 400,
+          resizablePanels: true
+        }
+      });
+    </script>
+  </body>
+</html>

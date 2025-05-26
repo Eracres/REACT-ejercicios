@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Ejemplo 1 - Componente funcional</title>
+    <script src="https://unpkg.com/@codesandbox/sandpack-react/umd/index.min.js"></script>
+  </head>
+  <body>
+    <h2>🧪 Ejemplo: Componente funcional básico</h2>
+    <p>Este componente muestra una estructura simple con título y párrafo. Está escrito como una función que devuelve JSX.</p>
+
+    <pre>
+<code>
+function Tarjeta() {
+  return (
+    &lt;div&gt;
+      &lt;h3&gt;React es genial 😎&lt;/h3&gt;
+      &lt;p&gt;Este es un componente funcional&lt;/p&gt;
+    &lt;/div&gt;
+  );
+}
+</code>
+    </pre>
+
+    <div id="editor"></div>
+
+    <script type="module">
+      import { Sandpack } from "https://unpkg.com/@codesandbox/sandpack-react/dist/index.mjs";
+      const root = document.getElementById("editor");
+      Sandpack.render(root, {
+        template: "react",
+        files: {
+          "/App.js": {
+            code: `function Tarjeta() {
+  return (
+    <div>
+      <h3>React es genial 😎</h3>
+      <p>Este es un componente funcional</p>
+    </div>
+  );
+}
+
+export default function App() {
+  return <Tarjeta />;
+}`
+          }
+        },
+        options: {
+          showTabs: false,
+          showLineNumbers: true,
+          editorHeight: 350,
+          readOnly: true
+        }
+      });
+    </script>
+  </body>
+</html>
