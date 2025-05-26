@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Ejercicio 1 - Editor interactivo</title>
+    <script src="https://unpkg.com/@codesandbox/sandpack-react/umd/index.min.js"></script>
+  </head>
+  <body>
+    <h2>Ejercicio 1</h2>
+    <p>Edita el siguiente código:</p>
+    <div id="editor"></div>
+
+    <script type="module">
+      import { Sandpack } from "https://unpkg.com/@codesandbox/sandpack-react/dist/index.mjs";
+
+      const root = document.getElementById("editor");
+      Sandpack.render(root, {
+        template: "react",
+        files: {
+          "/App.js": {
+            code: `export default function App() {
+  return <h1>Hola desde el Ejercicio 1!</h1>;
+};`
+          }
+        },
+        options: {
+          showTabs: true,
+          showLineNumbers: true,
+          editorHeight: 400,
+          resizablePanels: true
+        }
+      });
+    </script>
+  </body>
+</html>
