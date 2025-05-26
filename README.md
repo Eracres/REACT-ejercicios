@@ -4,3 +4,5 @@ Repositorio con ejercicios prácticos interactivos. Haz clic en un enlace para e
 
 - [Ejercicio 1](editor/ejercicio1.html)
 - [Ejercicio 2](editor/ejercicio2.html)
+- [Ejercicio](editor/ejercicio.html)
+- [Ejermplo](editor/ejemplo.html)
